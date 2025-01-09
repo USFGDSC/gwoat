@@ -5,7 +5,7 @@ const TitleBoxes = ({ children, ...props }) => {
 		<Box
 			sx={{
 				position: 'relative',
-				height: '50vh',
+				width: '100%',
 				overflow: 'visible',
 				background: 'transparent',
 				border: '2px solid black',

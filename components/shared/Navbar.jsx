@@ -13,8 +13,22 @@ const Navbar = () => {
 				// position: 'fixed',
 				zIndex: 999,
 				background: 'var(--background)',
+				padding: '0 16px',
+				position: 'relative',
 			}}
 		>
+			<Box
+				component="img"
+				src="/logo.png"
+				alt="Logo"
+				sx={{
+					height: '40px',
+					position: 'absolute',
+					marginRight: '16px',
+					left: 32,
+					top: 12,
+				}}
+			/>
 			<Typography fontWeight="bold" margin={2}>
 				Home
 			</Typography>

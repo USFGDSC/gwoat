@@ -1,67 +1,76 @@
-import { Box } from '@mui/material';
-import { Instagram, LinkedIn, Email, GitHub } from '@mui/icons-material';
-
-const links = {
-	lt: 'https://google.com',
-	inst: 'https://google.com',
-	bullsc: 'https://google.com',
-};
-
-const CircleButton = ({ children, ...props }) => {
-	return (
-		<Box
-			sx={{
-				cursor: 'pointer',
-				backgroundColor: 'gray',
-				borderRadius: '50%',
-				width: 40,
-				height: 40,
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-				transition: 'background-color 0.15s ease',
-				...props.sx,
-				'&:hover': {
-					backgroundColor: 'white',
-				},
-			}}
-		>
-			{children}
-		</Box>
-	);
-};
+import React from 'react';
+import { Box, fontWeight } from '@mui/system';
+import Heading from './Heading';
+import { Typography } from '@mui/material';
+import Link from 'next/link';
 
 const Footer = () => {
 	return (
 		<Box
 			sx={{
-				position: 'fixed',
-				bottom: 10,
-				right: 10,
-				display: 'flex',
-				gap: 2,
+				backgroundColor: 'black',
 			}}
 		>
-			<CircleButton
-				sx={{ backgroundColor: (theme) => theme.palette.seaGreen.main }}
+			<Box
+				sx={{
+					display: 'flex',
+					// flexDirection: 'column',
+					// alignItems: 'center',
+					justifyContent: 'space-evenly',
+					minHeight: '40vh',
+					backgroundColor: 'black',
+					color: 'white',
+					padding: '128px',
+				}}
 			>
-				<Instagram />
-			</CircleButton>
-			<CircleButton
-				sx={{ backgroundColor: (theme) => theme.palette.blueberry.main }}
-			>
-				<LinkedIn />
-			</CircleButton>
-			<CircleButton
-				sx={{ backgroundColor: (theme) => theme.palette.selectiveYellow.main }}
-			>
-				<GitHub />
-			</CircleButton>
-			<CircleButton
-				sx={{ backgroundColor: (theme) => theme.palette.cinnabar.main }}
-			>
-				<Email />
-			</CircleButton>
+				<Box>
+					<Typography sx={{ marginBottom: '16px' }}>
+						get in touch with us
+					</Typography>
+					<Heading variant="h2">Google Developers</Heading>
+					<Heading variant="h2">Student Club</Heading>
+					<Heading variant="h3">@ Uni of South Florida</Heading>
+				</Box>
+				<Box>
+					<Typography sx={{ marginBottom: '16px' }}>
+						contact information
+					</Typography>
+					<Heading variant="h3" sx={{ fontWeight: 400 }}>
+						gdscatusf@gmail.com
+					</Heading>
+					<Box
+						sx={{
+							display: 'grid',
+							gridTemplateColumns: '1fr 1fr',
+							marginTop: '32px',
+						}}
+					>
+						{/* navigation element here */}
+						<Link href="/">
+							<Typography fontSize="1.4rem">Home</Typography>
+						</Link>
+
+						<Link href="/about">
+							<Typography fontSize="1.4rem">About</Typography>
+						</Link>
+
+						<Link href="/events">
+							<Typography fontSize="1.4rem">Events</Typography>
+						</Link>
+
+						<Link href="/projects">
+							<Typography fontSize="1.4rem">Projects</Typography>
+						</Link>
+					</Box>
+				</Box>
+			</Box>
+			<Box>
+				<Typography
+					sx={{ textAlign: 'center', padding: '16px', color: 'white' }}
+				>
+					&copy; 2021 Google Developers Student Club @ USF
+				</Typography>
+			</Box>
 		</Box>
 	);
 };
