@@ -45,7 +45,11 @@ const IntroSection = () => {
 			sx={{
 				backgroundColor: (theme) => theme.palette.primary.light,
 				width: '100vw',
-				padding: 16,
+				paddingX: {
+					xs: 4,
+					md: 16,
+				},
+				paddingY: 16,
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
@@ -66,15 +70,15 @@ const IntroSection = () => {
 				marginY={8}
 			>
 				<MissionBox
-					title="Student Engagement"
+					title="Engagement"
 					description="We wish to straighten the gap between theory and practice for our 800+ members."
 				></MissionBox>
 				<MissionBox
-					title="Innovation and Creativity"
+					title="Creativity"
 					description="We aim to encourage innovation, creativity, and problem-solving among students."
 				></MissionBox>
 				<MissionBox
-					title="Strong Community"
+					title="Community"
 					description="We want to nurture and foster a supportive and collaborative community of tech enthusiasts."
 				></MissionBox>
 			</Box>

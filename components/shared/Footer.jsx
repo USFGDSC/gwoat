@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, fontWeight } from '@mui/system';
+import { Box } from '@mui/system';
 import Heading from './Heading';
-import { Typography } from '@mui/material';
+import { Typography, Grid2 as Grid } from '@mui/material';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -11,27 +11,40 @@ const Footer = () => {
 				backgroundColor: 'black',
 			}}
 		>
-			<Box
+			<Grid
 				sx={{
-					display: 'flex',
 					// flexDirection: 'column',
 					// alignItems: 'center',
-					justifyContent: 'space-evenly',
 					minHeight: '40vh',
 					backgroundColor: 'black',
 					color: 'white',
-					padding: '128px',
+					paddingY: 16,
+					paddingX: {
+						xs: 4,
+						md: 16,
+					},
 				}}
+				container
+				gap="auto"
+				justifyContent={'space-evenly'}
 			>
-				<Box>
+				<Grid
+					item
+					xs={12}
+					md={6}
+					mb={{
+						xs: 8,
+						md: 0,
+					}}
+				>
 					<Typography sx={{ marginBottom: '16px' }}>
 						get in touch with us
 					</Typography>
 					<Heading variant="h2">Google Developers</Heading>
 					<Heading variant="h2">Student Club</Heading>
 					<Heading variant="h3">@ Uni of South Florida</Heading>
-				</Box>
-				<Box>
+				</Grid>
+				<Grid item xs={12} md={6}>
 					<Typography sx={{ marginBottom: '16px' }}>
 						contact information
 					</Typography>
@@ -62,8 +75,8 @@ const Footer = () => {
 							<Typography fontSize="1.4rem">Projects</Typography>
 						</Link>
 					</Box>
-				</Box>
-			</Box>
+				</Grid>
+			</Grid>
 			<Box>
 				<Typography
 					sx={{ textAlign: 'center', padding: '16px', color: 'white' }}

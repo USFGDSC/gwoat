@@ -47,7 +47,10 @@ const LandingPage = () => {
 						justifyContent: 'center',
 						width: '100vw',
 						margin: 16,
-						padding: 16,
+						padding: {
+							xs: 4,
+							md: 16,
+						},
 					}}
 				>
 					<Grid container spacing={8} width={'100%'}>
@@ -144,8 +147,8 @@ const LandingPage = () => {
 						</Grid>
 					</Grid>
 				</Box>
-				<EventsSection></EventsSection>
-				<PeopleSection />
+				<EventsSection />
+				{/* <PeopleSection /> */}
 			</Container>
 			<Floater />
 			<Footer />

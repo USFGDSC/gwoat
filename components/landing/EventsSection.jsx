@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Box, Divider, Typography } from '@mui/material';
+import { Box, Divider, Typography, Grid2 as Grid } from '@mui/material';
 import { EmergencyOutlined } from '@mui/icons-material';
 import Heading from '../shared/Heading';
 import Image from 'next/image';
@@ -71,7 +71,11 @@ const EventsSection = () => {
 		<Box
 			sx={{
 				backgroundColor: (theme) => theme.palette.selectiveYellow.main,
-				padding: '64px',
+				paddingY: 16,
+				paddingX: {
+					xs: 4,
+					md: 16,
+				},
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'center',
@@ -87,6 +91,7 @@ const EventsSection = () => {
 					margin: '64px',
 					justifyContent: 'center',
 					alignItems: 'center',
+					textAlign: 'center',
 				}}
 			>
 				<Heading margin={2}>1 club.</Heading>
@@ -94,97 +99,96 @@ const EventsSection = () => {
 				<Heading margin={2}>10000+ attendees.</Heading>
 			</Box>
 
-			<Box
-				width="100%"
-				display="grid"
-				gridTemplateColumns={{
-					xs: '1fr',
-					sm: '1fr 1fr',
-				}}
-				margin="64px"
-				gap={{ xs: 2, sm: 4 }}
-			>
-				<Box>
-					<Divider sx={{ border: '1px solid black' }} />
-					{events.map((eventItem, index) => (
-						<Box key={'event' + index}>
-							<Box
-								onMouseOver={() => setEvent(index)}
-								sx={{
-									padding: '32px',
-									display: 'flex',
-									alignItems: 'center',
-								}}
-							>
-								<EmergencyOutlined
+			<Box width="100%" height="100%" border={'1px solid red'}>
+				<Grid marginY={16} container gap={16}>
+					<Grid
+						item
+						xs={12}
+						md={6}
+						sx={{
+							width: 'min(100%, 600px)',
+						}}
+					>
+						<Divider sx={{ border: '1px solid black' }} />
+						{events.map((eventItem, index) => (
+							<Box key={'event' + index}>
+								<Box
+									onMouseOver={() => setEvent(index)}
 									sx={{
-										opacity: event === index ? 1 : 0,
-										transition: 'opacity 0.15s ease-in-out',
-										marginLeft: '16px',
-										fontSize: '1.2rem',
-									}}
-								/>
-								<Typography
-									variant="h5"
-									fontWeight={600}
-									sx={{
-										marginLeft: event === index ? '16px' : '24px',
-										transition: 'margin-left 0.15s ease-in-out',
+										padding: '32px',
+										display: 'flex',
+										alignItems: 'center',
 									}}
 								>
-									{eventItem.name}
-								</Typography>
+									<EmergencyOutlined
+										sx={{
+											opacity: event === index ? 1 : 0,
+											transition: 'opacity 0.15s ease-in-out',
+											marginLeft: '16px',
+											fontSize: '1.2rem',
+										}}
+									/>
+									<Typography
+										variant="h5"
+										fontWeight={600}
+										sx={{
+											marginLeft: event === index ? '16px' : '24px',
+											transition: 'margin-left 0.15s ease-in-out',
+										}}
+									>
+										{eventItem.name}
+									</Typography>
+								</Box>
+								<Divider sx={{ border: '1px solid black' }} />
 							</Box>
-							<Divider sx={{ border: '1px solid black' }} />
-						</Box>
-					))}
-				</Box>
-				<Box
-					height="100%"
-					sx={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						flexDirection: 'column',
-					}}
-				>
-					<Box
+						))}
+					</Grid>
+					<Grid
+						item
+						xs={12}
+						md={6}
 						sx={{
-							marginBottom: '56px',
-							height: '100%',
+							width: 'min(100%, 600px)',
 						}}
 					>
 						<Box
-							border="2px solid black"
-							height="100%"
 							sx={{
-								aspectRatio: '16 / 10',
-								backgroundColor: 'white',
 								position: 'relative',
+								marginBottom: '56px',
+								border: '2px solid black',
+								height: 'min(100%, 400px)',
 							}}
 						>
 							<Image
 								src={events[event].images[0]}
 								alt={events[event].name}
+								fill
 								style={{
 									objectFit: 'cover',
 								}}
-								fill
 							/>
 						</Box>
-					</Box>
-					<Box width="80%" minHeight="20%">
-						<Typography variant="body1" marginBottom="8px" fontSize={'1.2rem'}>
-							{events[event].date}
-						</Typography>
-						<Typography variant="body1" fontWeight={600} fontSize={'1.2rem'}>
-							Attendees: {events[event].attendees}
-						</Typography>
-						<Typography variant="body1" marginBottom="8px" fontSize={'1.2rem'}>
-							{events[event].description}
-						</Typography>
-					</Box>
-				</Box>
+						<Box width="80%" minHeight="20%">
+							<Typography
+								variant="body1"
+								marginBottom="8px"
+								fontSize={'1.2rem'}
+							>
+								{events[event].date}
+							</Typography>
+							<Typography variant="body1" fontWeight={600} fontSize={'1.2rem'}>
+								Attendees: {events[event].attendees}
+							</Typography>
+							<Typography
+								variant="body1"
+								marginBottom="8px"
+								fontSize={'1.2rem'}
+							>
+								{events[event].description}
+							</Typography>
+						</Box>
+					</Grid>
+				</Grid>
 			</Box>
 		</Box>
 	);
