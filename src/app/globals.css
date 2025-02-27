@@ -39,3 +39,31 @@ a {
 		color-scheme: dark;
 	}
 }
+
+.people-section-container {
+	position: relative;
+}
+
+.people-section-container::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('/logo.png'); /* Replace with your image URL */
+	background-size: 200px 100px;
+	opacity: 0.15;
+	/* c2dcff */
+	filter: grayscale(100%);
+	animation: marquee 60s linear infinite; /* Moving effect */
+}
+
+@keyframes marquee {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 100%;
+	}
+}

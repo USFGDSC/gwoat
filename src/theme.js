@@ -12,9 +12,12 @@ const theme = responsiveFontSizes(
 			},
 			blueberry: {
 				main: '#4285F4',
+				light: '#7bacfa',
+				dark: '#3873d4',
 			},
 			cinnabar: {
 				main: '#EA4335',
+				light: '#ff7038',
 			},
 			selectiveYellow: {
 				main: '#FBBC05',

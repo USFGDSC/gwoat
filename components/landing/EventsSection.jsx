@@ -99,12 +99,25 @@ const EventsSection = () => {
 				<Heading margin={2}>10000+ attendees.</Heading>
 			</Box>
 
-			<Box width="100%" height="100%" border={'1px solid red'}>
-				<Grid marginY={16} container gap={16}>
-					<Grid
-						item
-						xs={12}
-						md={6}
+			<Box width="100%" height="100%">
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: {
+							xs: 'center',
+							md: 'space-evenly',
+						},
+						alignItems: {
+							xs: 'space-evenly',
+							md: 'flex-start',
+						},
+						flexDirection: {
+							xs: 'column',
+							md: 'row',
+						},
+					}}
+				>
+					<Box
 						sx={{
 							width: 'min(100%, 600px)',
 						}}
@@ -142,13 +155,13 @@ const EventsSection = () => {
 								<Divider sx={{ border: '1px solid black' }} />
 							</Box>
 						))}
-					</Grid>
-					<Grid
-						item
-						xs={12}
-						md={6}
+					</Box>
+					<Box
 						sx={{
 							width: 'min(100%, 600px)',
+							marginTop: {
+								xs: '32px',
+							},
 						}}
 					>
 						<Box
@@ -156,7 +169,7 @@ const EventsSection = () => {
 								position: 'relative',
 								marginBottom: '56px',
 								border: '2px solid black',
-								height: 'min(100%, 400px)',
+								height: 'min(100vw, 400px)',
 							}}
 						>
 							<Image
@@ -183,12 +196,13 @@ const EventsSection = () => {
 								variant="body1"
 								marginBottom="8px"
 								fontSize={'1.2rem'}
+								height="200px"
 							>
 								{events[event].description}
 							</Typography>
 						</Box>
-					</Grid>
-				</Grid>
+					</Box>
+				</Box>
 			</Box>
 		</Box>
 	);

@@ -148,7 +148,21 @@ const LandingPage = () => {
 					</Grid>
 				</Box>
 				<EventsSection />
-				{/* <PeopleSection /> */}
+				<Box
+					height="25vh"
+					sx={{
+						textAlign: 'center',
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<Typography variant="h1" fontWeight={800}>
+						- behind the scenes -
+					</Typography>
+				</Box>
+				<PeopleSection />
 			</Container>
 			<Floater />
 			<Footer />
