@@ -36,8 +36,8 @@ const LandingPage = () => {
 						justifyContent: 'center',
 					}}
 				>
-					<Heading variant="h1">Google Developers Student Club</Heading>
-					<Heading variant="h3">USF Chapter</Heading>
+					<Heading variant="h1">Google Developer Group</Heading>
+					<Heading variant="h3">on Campus at USF</Heading>
 				</Box>
 				<IntroSection />
 				<Box
