@@ -80,7 +80,7 @@ const Footer = () => {
         <Typography
           sx={{ textAlign: "center", padding: "16px", color: "white" }}
         >
-          &copy; 2021 Google Developer Group on Campus at USF
+          &copy; 2025 Google Developer Group on Campus at USF
         </Typography>
       </Box>
     </Box>
